@@ -1,0 +1,91 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+}
+
+.header {
+	grid-area: header;
+	padding: 2em;
+	background-color: #003;
+}
+
+.header__title {
+	cursor: default;
+	color: #f2f3f4;
+	text-align: center;
+}
+
+.main {
+	grid-area: main;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form {
+	border: 1px solid #000;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.form__header {
+	width: 100%;
+	padding: 1em;
+	margin-bottom: 1em;
+	cursor: default;
+	background-color: #003;
+	color: #f2f3f4;
+	text-align: center;
+}
+
+.form__input {
+	font-size: 1.25rem;
+	padding: 0.5em;
+	margin: 0 1em 1.25em;
+	text-align: center;
+}
+
+.form__pickup-time {
+	text-align: center;
+}
+
+.form__select {
+	font-size: 1.25rem;
+	padding: 0.5em;
+	margin: 0 1em 1.25em;
+	text-align: center;
+}
+
+.form__button {
+	margin: 0.5em;
+	padding: 0.5em;
+	cursor: pointer;
+	background-color: #00f;
+	color: #f2f3f4;
+	font-size: 1.25rem;
+}
+
+.footer {
+	grid-area: footer;
+	padding: 1em;
+	background-color: #003;
+	color: #f2f3f4;
+	text-align: center;
+}
+
+.footer__copyright {
+	cursor: default;
+}
