@@ -1,0 +1,13 @@
+@import '../OrderForm.scss';
+
+.location {
+	@include order-body;
+
+	&__label {
+		@include order-label;
+	}
+
+	&__input {
+		@include order-input;
+	}
+}
