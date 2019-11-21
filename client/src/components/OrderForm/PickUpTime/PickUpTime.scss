@@ -1,0 +1,49 @@
+@import '../OrderForm.scss';
+
+.time {
+	@include order-body;
+	justify-content: flex-start;
+
+	&__label {
+		@include order-label;
+		margin: 2em 0 0.5em;
+	}
+
+	&__input {
+		@include order-input;
+		padding-left: 1.25em;
+		font-size: 2.5rem;
+
+		&--disabled {
+			background-color: #ddd;
+		}
+	}
+
+	&__asap {
+		width: 17rem;
+		min-height: 3rem;
+		margin: auto;
+		padding: 0.5em;
+		cursor: pointer;
+		user-select: none;
+		border-radius: 10px;
+		background-color: #030;
+		color: #a2a3a4;
+		font-size: 1.25rem;
+		font-weight: bold;
+		text-align: center;
+		
+		&--active {
+			background-color: #0a0;
+			color: #f2f3f4;
+			position: relative;
+
+			&::after {
+				content: '\2714'; // Check Mark
+				position: absolute;
+				top: 0.4em;
+				right: 1em;
+			}
+		}
+	}
+}
