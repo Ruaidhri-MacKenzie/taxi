@@ -1,0 +1,30 @@
+{
+  "name": "taxi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ruaidhri-MacKenzie/taxi.git"
+  },
+  "author": "Ruaidhri MacKenzie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ruaidhri-MacKenzie/taxi/issues"
+  },
+  "homepage": "https://github.com/Ruaidhri-MacKenzie/taxi#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "nodemon": "^1.19.4"
+  }
+}
