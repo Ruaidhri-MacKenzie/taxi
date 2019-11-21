@@ -1,0 +1,21 @@
+@import '../OrderForm.scss';
+
+.confirm {
+	@include order-body;
+	padding: 0 1em;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	&__label {
+		justify-self: left;
+		margin: 0.5em;
+		font-size: 1.25rem;
+	}
+	
+	&__details {
+		justify-self: left;
+		margin: 0.5em;
+		font-size: 1.25rem;
+	}
+}
