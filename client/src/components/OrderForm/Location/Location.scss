@@ -10,4 +10,43 @@
 	&__input {
 		@include order-input;
 	}
+
+	&__buttons {
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	&__show-map {
+			border: none;
+			border-right: 1px solid #000;
+	}
+	&__show-address {
+			border: none;
+			border-left: 1px solid #000;
+	}
+
+	&__button {
+		@include order-button;
+		width: 100%;
+		margin: 0 0 0.75em;
+		padding: 0.5em;
+		border-bottom: 1px solid #000;
+		color: #000;
+		
+		&:focus {
+			outline: none;
+			color: #f80;
+		}
+
+		&--active {
+			border: none;
+			background-color: #f2f3f4;
+			color: #000;
+			
+			&:focus {
+				color: #000;
+			}
+		}
+	}
 }

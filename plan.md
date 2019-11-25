@@ -7,9 +7,9 @@ manager: sets starting fare, price per mile, service areas, operating times, dis
 
 customers:
 without an account must input their name and phone number
-set time to either "As soon as possible" or a scheduled future time and date
 set location through address, point on map, or gps location
 set destination through address or point on map
+set time to either "As soon as possible" or a scheduled future time and date
 confirm all details and send the request
 
 drivers:

@@ -12,7 +12,6 @@
 }
 
 @mixin order-label {
-	margin-top: 1em;
 	font-size: 1.5rem;
 }
 
@@ -20,7 +19,7 @@
 	width: 17rem;
 	min-height: 3rem;
 	padding: 0.5em;
-	margin: 0 1em;
+	margin: 0 1em 1em;
 	font-size: 1.25rem;
 	text-align: center;
 }
@@ -36,18 +35,19 @@
 }
 
 .order {
-	width: fit-content;
 	min-width: 320px;
+	min-height: 568px;
 	width: 100%;
 	height: 100%;
+	max-width: 414px;
+	max-height: 823px;
 	border: 1px solid #000;
 	background-color: #003;
 	display: grid;
-	grid-template-rows: auto 1fr auto;
+	grid-template-rows: auto 1fr;
 	grid-template-areas:
 		"header"
-		"body"
-		"buttons";
+		"body";
 
 	&__header {
 		grid-area: header;
@@ -61,33 +61,5 @@
 
 	&__title {
 		color: #f2f3f4;
-	}
-
-	&__buttons {
-		grid-area: buttons;
-		width: 100%;
-		background-color: #f2f3f4;
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-	}
-
-	&__submit {
-		@include order-button;
-		margin-left: auto;
-		background-color: #00a;
-	}
-	
-	&__back {
-		@include order-button;
-		margin-right: auto;
-		width: auto;
-		background-color: #a00;
-	}
-	
-	&__next {
-		@include order-button;
-		margin-left: auto;
-		background-color: #00a;
 	}
 }

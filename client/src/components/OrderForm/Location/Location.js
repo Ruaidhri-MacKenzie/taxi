@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Location.scss';
 
 import StreetMap from '../../StreetMap/StreetMap';
+import FormNav from '../FormNav/FormNav';
+import AddressForm from '../AddressForm/AddressForm';
 
-const Location = ({ location, handleChange }) => {
+const Location = ({ location, handleChange, backPage, nextPage }) => {
+	const [viewMap, setViewMap] = useState(true);
+	const showMap = () => setViewMap(true);
+	const showAddress = () => setViewMap(false);
+
+	const renderOptions = () => {
+		let showMapClassName ="location__button location__show-map";
+		let showAddressClassName = "location__button location__show-address";
+		if (viewMap) showMapClassName += " location__button--active";
+		else showAddressClassName += " location__button--active";
+
+		return (
+			<section className="location__buttons">
+				<button className={showMapClassName} onClick={showMap}>Find on Map</button>
+				<button className={showAddressClassName} onClick={showAddress}>Enter Address</button>
+			</section>
+		);
+	};
+
 	return (
 		<section className="location">
-				{/* <label className="location__label" htmlFor="order-location">Pick-Up Location</label>
-				<select
-					name="location"
-					id="order-location"
-					className="location__input"
-					value={location}
-					onChange={handleChange}
-				>
-					<option value="Aberdeen">Aberdeen</option>
-					<option value="Inverurie">Inverurie</option>
-					<option value="Westhill">Westhill</option>
-				</select> */}
-				<StreetMap />
+			{renderOptions()}
+			{viewMap && <StreetMap />}
+			{!viewMap && <AddressForm />}
+			<FormNav back={backPage} next={nextPage} />
 		</section>
 	);
 };

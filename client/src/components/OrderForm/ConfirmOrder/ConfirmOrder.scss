@@ -2,10 +2,12 @@
 
 .confirm {
 	@include order-body;
-	padding: 0 1em;
 
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	&__details {
+		margin: auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
 
 	&__label {
 		justify-self: left;
@@ -13,7 +15,7 @@
 		font-size: 1.25rem;
 	}
 	
-	&__details {
+	&__detail {
 		justify-self: left;
 		margin: 0.5em;
 		font-size: 1.25rem;

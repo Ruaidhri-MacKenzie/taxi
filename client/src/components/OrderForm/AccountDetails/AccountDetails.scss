@@ -10,4 +10,10 @@
 	&__input {
 		@include order-input;
 	}
+
+	&__container {
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+	}
 }
