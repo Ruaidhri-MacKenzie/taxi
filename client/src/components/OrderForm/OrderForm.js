@@ -52,36 +52,14 @@ const OrderForm = () => {
 
 	const renderBody = () => {
 		switch (state.page) {
-			case 0: return <AccountDetails name={state.name} tel={state.tel} handleChange={handleChange} />
-			case 1: return <Location location={state.location} handleChange={handleChange} />
-			case 2: return <Destination destination={state.destination} handleChange={handleChange} />
-			case 3: return <PickUpTime time={state.time} setTime={setTime} handleChange={handleChange} />
-			case 4: return <ConfirmOrder { ...state } />
+			case 0: return <AccountDetails name={state.name} tel={state.tel} handleChange={handleChange} nextPage={nextPage} />
+			case 1: return <Location location={state.location} handleChange={handleChange} backPage={backPage} nextPage={nextPage} />
+			case 2: return <Destination destination={state.destination} handleChange={handleChange} backPage={backPage} nextPage={nextPage} />
+			case 3: return <PickUpTime time={state.time} setTime={setTime} handleChange={handleChange} backPage={backPage} nextPage={nextPage} />
+			case 4: return <ConfirmOrder { ...state } backPage={backPage} submitOrder={submitOrder} />
 			default:
 				setState({ ...state, page: 0 });
 				return null;
-		}
-	};
-
-	const renderButtons = () => {
-		switch (state.page) {
-			case 0: return (
-				<div className="order__buttons">
-					<button className="order__next" onClick={nextPage}>Next</button>
-				</div>
-			);
-			case 4: return (
-				<div className="order__buttons">
-					<button className="order__back" onClick={backPage}>Back</button>
-					<button className="order__submit" onClick={submitOrder}>Submit</button>
-				</div>
-			);
-			default: return (
-				<div className="order__buttons">
-					<button className="order__back" onClick={backPage}>Back</button>
-					<button className="order__next" onClick={nextPage}>Next</button>
-				</div>
-			);
 		}
 	};
 	
@@ -89,7 +67,6 @@ const OrderForm = () => {
 		<form className="order" onSubmit={handleSubmit}>
 			{renderHeader()}
 			{renderBody()}
-			{renderButtons()}
 		</form>
 	);
 };
