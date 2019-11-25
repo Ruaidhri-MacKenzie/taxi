@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './PickUpTime.scss';
 
-const PickUpTime = ({ time, setTime, handleChange }) => {
+import FormNav from '../FormNav/FormNav';
+
+const PickUpTime = ({ time, setTime, handleChange, backPage, nextPage }) => {
 	const [scheduled, setScheduled] = useState(false);
 	useEffect(() => {
 		if (!time) setScheduled(false);
@@ -45,6 +47,7 @@ const PickUpTime = ({ time, setTime, handleChange }) => {
 				onClick={clickTimeInput}
 			/>
 			<p className={(scheduled) ? "time__asap" : "time__asap time__asap--active"} onClick={clickASAP}>As soon as possible</p>
+			<FormNav back={backPage} next={nextPage} />
 		</section>
 	);
 };

@@ -1,7 +1,9 @@
 import React from 'react';
 import './AccountDetails.scss';
 
-const AccountDetails = ({ name, tel, handleChange }) => {
+import FormNav from '../FormNav/FormNav';
+
+const AccountDetails = ({ name, tel, handleChange, nextPage }) => {
 	// const validateInputs = () => {
 	// 	if (!name) {
 	// 		console.log("Name is required.");
@@ -26,26 +28,30 @@ const AccountDetails = ({ name, tel, handleChange }) => {
 
 	return (
 		<section className="account">
-			<label className="account__label" htmlFor="order-name">Name</label>
-			<input
-				type="text"
-				name="name"
-				id="order-name"
-				className="account__input"
-				value={name}
-				onChange={handleChange}
-			/>
+			<div className="account__container">
+				<label className="account__label" htmlFor="order-name">Name</label>
+				<input
+					type="text"
+					name="name"
+					id="order-name"
+					className="account__input"
+					value={name}
+					onChange={handleChange}
+					/>
 
-			<label className="account__label" htmlFor="order-tel">Phone Number</label>
-			<input
-				type="tel"
-				name="tel"
-				id="order-tel"
-				className="account__input"
-				pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$"
-				value={tel}
-				onChange={handleChange}
-			/>
+				<label className="account__label" htmlFor="order-tel">Phone Number</label>
+				<input
+					type="tel"
+					name="tel"
+					id="order-tel"
+					className="account__input"
+					pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$"
+					value={tel}
+					onChange={handleChange}
+				/>
+			</div>
+
+			<FormNav next={nextPage} />
 		</section>
 	);
 };
