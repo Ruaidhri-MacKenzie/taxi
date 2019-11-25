@@ -1,0 +1,15 @@
+@import '../OrderForm.scss';
+
+.address {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+
+	&__label {
+		@include order-label;
+	}
+	
+	&__input {
+		@include order-input;
+	}
+}
