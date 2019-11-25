@@ -1,0 +1,27 @@
+@import '../OrderForm.scss';
+
+.nav {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	&__back {
+		@include order-button;
+		margin-right: auto;
+		width: auto;
+		background-color: #a00;
+	}
+	
+	&__next {
+		@include order-button;
+		margin-left: auto;
+		background-color: #00a;
+	}
+
+	&__submit {
+		@include order-button;
+		margin-left: auto;
+		background-color: #00a;
+	}
+}
