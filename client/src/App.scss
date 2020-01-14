@@ -11,6 +11,13 @@
 
 .header {
 	grid-area: header;
+	background-color: #003;
+
+	&__title {
+		padding-top: 1em;
+		color: #f2f3f4;
+		text-align: center;
+	}
 }
 
 .main {
