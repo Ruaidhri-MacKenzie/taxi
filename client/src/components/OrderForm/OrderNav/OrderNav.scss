@@ -1,7 +1,10 @@
 @import '../OrderForm.scss';
 
-.nav {
+.order-nav {
+	grid-area: footer;
 	width: 100%;
+	min-height: 88px;
+	background-color: #f2f3f4;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -17,6 +20,11 @@
 		@include order-button;
 		margin-left: auto;
 		background-color: #00a;
+
+		&--grey {
+			background-color: #005;
+			color: #333;
+		}
 	}
 
 	&__submit {
