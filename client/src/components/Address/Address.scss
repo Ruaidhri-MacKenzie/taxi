@@ -3,7 +3,19 @@
 	padding: 0.5em;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	justify-content: center;
+	
+	&--left {
+		align-items: flex-start;
+	}
+
+	&--center {
+		align-items: center;
+	}
+
+	&--right {
+		align-items: flex-end;
+	}
 
 	&__line {
 		color: #000000;
