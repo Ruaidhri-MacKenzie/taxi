@@ -1,38 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
-import L from 'leaflet';
+import React, { useState } from 'react';
+import { Map, TileLayer, Marker } from 'react-leaflet';
 import './StreetMap.scss';
 
-const StreetMap = () => {
-	const id = "map";
-	const [latlng, setLatlng] = useState([57.1497, -2.0943]);
+const StreetMap = ({ latlng, setLatlng }) => {
+	const [zoom, setZoom] = useState(13);
 	
-	const mapRef = useRef(null);
-	useEffect(() => {
-		mapRef.current = L.map(id, {
-			center: [57.1497, -2.0943],
-			zoom: 13,
-			layers: [
-				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
-				}),
-			],
-		});
-	}, []);
-	
-	const markerRef = useRef(null);
-	useEffect(() => {
-		markerRef.current = L.marker(latlng).addTo(mapRef.current);
-	}, [latlng]);
-
-	const clickMap = e => {
-		console.log(e);
-		const { lat, lng } = mapRef.current.mouseEventToLatLng(e.originalEvent);
-		console.log(lat + ', ' + lng);
-		setLatlng([lat, lng]);
-	};
+	const handleClick = e => setLatlng([e.latlng.lat, e.latlng.lng]);
+	const handleZoom = e => setZoom(e.target._zoom);
 
 	return (
-		<div id={id} className="map" onClick={clickMap}></div>
+		<Map 
+			className="map"
+			center={latlng}
+			zoom={zoom}
+			onClick={handleClick}
+			onZoom={handleZoom}
+		>
+			<TileLayer
+				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+				attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+			/>
+			<Marker position={latlng} />
+		</Map>
 	);
 };
 
