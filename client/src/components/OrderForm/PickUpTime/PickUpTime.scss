@@ -1,5 +1,9 @@
 @import '../OrderForm.scss';
 
+input[type="time"]::-webkit-clear-button {
+	display: none;
+}
+
 .time {
 	@include order-body;
 	justify-content: flex-start;
