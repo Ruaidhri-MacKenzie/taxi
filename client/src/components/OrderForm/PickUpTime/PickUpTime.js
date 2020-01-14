@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './PickUpTime.scss';
 
-import FormNav from '../FormNav/FormNav';
-
-const PickUpTime = ({ time, setTime, handleChange, backPage, nextPage }) => {
+const PickUpTime = ({ time, setTime }) => {
 	const [scheduled, setScheduled] = useState(false);
 	useEffect(() => {
 		if (!time) setScheduled(false);
@@ -34,6 +32,8 @@ const PickUpTime = ({ time, setTime, handleChange, backPage, nextPage }) => {
 	};
 	const clickASAP = () => setTime("");
 
+	const handleChange = e => setTime(e.currentTarget.value);
+
 	return (
 		<section className="time">
 			<label className="time__label" htmlFor="order-time">Pick-Up Time</label>
@@ -47,7 +47,6 @@ const PickUpTime = ({ time, setTime, handleChange, backPage, nextPage }) => {
 				onClick={clickTimeInput}
 			/>
 			<p className={(scheduled) ? "time__asap" : "time__asap time__asap--active"} onClick={clickASAP}>As soon as possible</p>
-			<FormNav back={backPage} next={nextPage} />
 		</section>
 	);
 };
