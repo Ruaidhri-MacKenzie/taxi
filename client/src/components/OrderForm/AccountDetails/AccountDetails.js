@@ -1,31 +1,12 @@
 import React from 'react';
 import './AccountDetails.scss';
 
-import FormNav from '../FormNav/FormNav';
+const AccountDetails = ({ name, setName, tel, setTel }) => {
+	/* Event Handlers */
+	const handleNameChange = e => setName(e.currentTarget.value);
+	const handleTelChange = e => setTel(e.currentTarget.value);
 
-const AccountDetails = ({ name, tel, handleChange, nextPage }) => {
-	// const validateInputs = () => {
-	// 	if (!name) {
-	// 		console.log("Name is required.");
-	// 		return false;
-	// 	}
-	// 	else if (name.length < 3) {
-	// 		console.log("Name must be at least 3 characters long.");
-	// 		return false;
-	// 	}
-	// 	else if (!tel) {
-	// 		console.log("Phone number is required.");
-	// 		return false;
-	// 	}
-	// 	else if (!tel.match(/^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$/)) {
-	// 		console.log("Phone number must be in UK format.");
-	// 		return false;
-	// 	}
-	// 	else {
-	// 		return true;
-	// 	}
-	// };
-
+	/* Render */
 	return (
 		<section className="account">
 			<div className="account__container">
@@ -36,7 +17,7 @@ const AccountDetails = ({ name, tel, handleChange, nextPage }) => {
 					id="order-name"
 					className="account__input"
 					value={name}
-					onChange={handleChange}
+					onChange={handleNameChange}
 					/>
 
 				<label className="account__label" htmlFor="order-tel">Phone Number</label>
@@ -47,11 +28,9 @@ const AccountDetails = ({ name, tel, handleChange, nextPage }) => {
 					className="account__input"
 					pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$"
 					value={tel}
-					onChange={handleChange}
+					onChange={handleTelChange}
 				/>
 			</div>
-
-			<FormNav next={nextPage} />
 		</section>
 	);
 };
