@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import './Destination.scss';
 
 import StreetMap from '../../StreetMap/StreetMap';
-import FormNav from '../FormNav/FormNav';
 import AddressForm from '../AddressForm/AddressForm';
 
-const Destination = ({ destination, handleChange, backPage, nextPage }) => {
+const Destination = ({ destination, setDestination }) => {
 	const [viewMap, setViewMap] = useState(true);
 	const showMap = () => setViewMap(true);
 	const showAddress = () => setViewMap(false);
@@ -27,9 +26,8 @@ const Destination = ({ destination, handleChange, backPage, nextPage }) => {
 	return (
 		<section className="destination">
 			{renderOptions()}
-			{viewMap && <StreetMap />}
+			{viewMap && <StreetMap latlng={destination} setLatlng={setDestination} />}
 			{!viewMap && <AddressForm />}
-			<FormNav back={backPage} next={nextPage} />
 		</section>
 	);
 };
