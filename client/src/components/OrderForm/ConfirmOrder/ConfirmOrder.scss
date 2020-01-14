@@ -2,6 +2,7 @@
 
 .confirm {
 	@include order-body;
+	text-align: left;
 
 	&__details {
 		margin: auto;
@@ -20,6 +21,5 @@
 		justify-self: left;
 		margin: 0.5em;
 		font-size: 1.25rem;
-		word-break: break-all;
 	}
 }
