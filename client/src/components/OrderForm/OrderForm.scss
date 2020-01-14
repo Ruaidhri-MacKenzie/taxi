@@ -1,5 +1,6 @@
 @mixin order-body {
 	grid-area: body;
+	width: 100%;
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
 	background-color: #f2f3f4;
@@ -44,22 +45,9 @@
 	border: 1px solid #000;
 	background-color: #003;
 	display: grid;
-	grid-template-rows: auto 1fr;
+	grid-template-rows: auto 1fr auto;
 	grid-template-areas:
 		"header"
-		"body";
-
-	&__header {
-		grid-area: header;
-		padding: 2em 1em;
-		cursor: default;
-		user-select: none;
-		background-color: #003;
-		color: #f2f3f4;
-		text-align: center;
-	}
-
-	&__title {
-		color: #f2f3f4;
-	}
+		"body"
+		"footer";
 }
