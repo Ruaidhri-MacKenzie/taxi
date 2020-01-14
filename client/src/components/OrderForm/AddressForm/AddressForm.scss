@@ -1,9 +1,10 @@
 @import '../OrderForm.scss';
 
-.address {
+.address-form {
 	margin: auto;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 
 	&__label {
 		@include order-label;
@@ -11,5 +12,34 @@
 	
 	&__input {
 		@include order-input;
+	}
+	
+	&__button {
+		@include order-button;
+	}
+
+	&__lookup {
+		background-color: #00f;
+		
+		&--grey {
+			background-color: #005;
+			color: #333;
+			cursor: default;
+		}
+	}
+
+	&__select {
+		background-color: #00f;
+		
+		&--grey {
+			background-color: #005;
+			color: #333;
+			cursor: default;
+		}
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-evenly;
 	}
 }
