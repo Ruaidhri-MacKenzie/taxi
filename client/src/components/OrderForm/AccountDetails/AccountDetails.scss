@@ -9,6 +9,7 @@
 
 	&__input {
 		@include order-input;
+		margin-bottom: 3em;
 	}
 
 	&__container {
