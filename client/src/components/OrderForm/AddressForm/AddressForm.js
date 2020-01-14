@@ -2,21 +2,25 @@ import React, { useState } from 'react';
 import './AddressForm.scss';
 
 const AddressForm = () => {
+	/* State */
 	const [address, setAddress] = useState({
-		house: "",
+		number: "",
 		postcode: "",
 	});
+
+	/* Event Handlers */
 	const handleChange = e => setAddress({ ...address, [e.currentTarget.name]: e.currentTarget.value });
 
+	/* Render */
 	return (
 		<section className="address">
-			<label className="address__label" htmlFor="house">House Number</label>
+			<label className="address__label" htmlFor="number">House Number</label>
 			<input
 				type="text"
-				name="house"
-				id="house"
+				name="number"
+				id="number"
 				className="address__input"
-				value={address.house}
+				value={address.number}
 				onChange={handleChange}
 			/>
 
