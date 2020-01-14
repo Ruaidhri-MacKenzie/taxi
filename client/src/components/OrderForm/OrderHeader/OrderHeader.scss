@@ -1,0 +1,13 @@
+.order-header {
+	grid-area: header;
+	padding: 2em 1em;
+	cursor: default;
+	user-select: none;
+	background-color: #003;
+	color: #f2f3f4;
+	text-align: center;
+	
+	&__title {
+		color: #f2f3f4;
+	}
+}
