@@ -32,8 +32,8 @@ const OrderForm = () => {
 	const [page, setPage] = useState(0);
 	const [error, setError] = useState("");
 
-	const [name, setName] = useState("");
-	const [tel, setTel] = useState("");
+	const [name, setName] = useState("asd");
+	const [tel, setTel] = useState("01234567890");
 	const [time, setTime] = useState("");
 	const [location, setLocation] = useState([57.1497, -2.0943]);
 	const [locationAddress, setLocationAddress] = useState(lookUpAddress(location));
@@ -58,6 +58,10 @@ const OrderForm = () => {
 		}
 		else if (name.length < 3) {
 			setError("Name must be at least 3 characters long.");
+			return false;
+		}
+		else if (name.length >= 25) {
+			setError("Name must be less than 25 characters long.");
 			return false;
 		}
 		else if (!tel) {
