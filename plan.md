@@ -37,3 +37,16 @@ display confirm arrival button
 display confirm customer seated button
 display confirm arrival at destination and payment received button
 
+database schemas
+customer:
+	name, tel, email, saved locations, payment details (card number & expiry date), orders
+
+driver:
+	name, tel, current location, active order
+
+order:
+	pick-up location, destination, pick-up time & date, customer (name & tel), assigned driver, time started, time completed, route taken
+
+location:
+	name, latlng, address: number, street, city, county, postcode
+
