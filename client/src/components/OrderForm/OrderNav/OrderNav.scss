@@ -4,7 +4,7 @@
 	grid-area: footer;
 	width: 100%;
 	min-height: 88px;
-	background-color: #f2f3f4;
+	background-color: var(--light);
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -13,17 +13,18 @@
 		@include order-button;
 		margin-right: auto;
 		width: auto;
-		background-color: #a00;
+		background-color: var(--colour3);
+		color: var(--grey);
 	}
 	
 	&__next {
 		@include order-button;
 		margin-left: auto;
-		background-color: #00a;
+		background-color: var(--colour1);
 
 		&--grey {
-			background-color: #005;
-			color: #333;
+			background-color: var(--colour1-dark);
+			color: var(--grey);
 			cursor: default;
 		}
 	}
@@ -31,6 +32,6 @@
 	&__submit {
 		@include order-button;
 		margin-left: auto;
-		background-color: #00a;
+		background-color: var(--colour2);
 	}
 }

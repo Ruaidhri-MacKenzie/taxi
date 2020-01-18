@@ -19,21 +19,21 @@
 	}
 
 	&__lookup {
-		background-color: #00f;
+		background-color: var(--colour1);
 		
 		&--grey {
-			background-color: #005;
-			color: #333;
+			background-color: var(--colour1-dark);
+			color: var(--grey);
 			cursor: default;
 		}
 	}
 
 	&__select {
-		background-color: #00f;
+		background-color: var(--colour1);
 		
 		&--grey {
-			background-color: #005;
-			color: #333;
+			background-color: var(--colour1-dark);
+			color: var(--grey);
 			cursor: default;
 		}
 	}

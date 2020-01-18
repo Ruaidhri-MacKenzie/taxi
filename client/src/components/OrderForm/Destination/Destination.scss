@@ -19,11 +19,11 @@
 
 	&__show-map {
 			border: none;
-			border-right: 1px solid #000;
+			border-right: 1px solid var(--dark);
 	}
 	&__show-address {
 			border: none;
-			border-left: 1px solid #000;
+			border-left: 1px solid var(--dark);
 	}
 
 	&__button {
@@ -31,21 +31,21 @@
 		width: 100%;
 		margin: 0 0 0.75em;
 		padding: 0.5em;
-		border-bottom: 1px solid #000;
-		color: #000;
+		border-bottom: 1px solid var(--dark);
+		color: var(--dark);
 		
 		&:focus {
 			outline: none;
-			color: #f80;
+			color: var(--colour2);
 		}
 
 		&--active {
 			border: none;
-			background-color: #f2f3f4;
-			color: #000;
+			background-color: var(--light);
+			color: var(--dark);
 			
 			&:focus {
-				color: #000;
+				color: var(--dark);
 			}
 		}
 	}

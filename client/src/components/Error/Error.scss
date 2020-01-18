@@ -2,7 +2,7 @@
 	grid-area: body;
 	padding: 1.5em;
 	align-self: end;
-	background-color: #000000cc;
-	color: #fff;
+	background-color: var(--dark-trans);
+	color: var(--light);
 	text-align: center;
 }
