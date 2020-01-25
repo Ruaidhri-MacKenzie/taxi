@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './OrderForm.scss';
 
+import Loading from './Loading/Loading';
 import Error from '../Error/Error';
 import OrderHeader from './OrderHeader/OrderHeader';
 import OrderNav from './OrderNav/OrderNav';
@@ -30,6 +31,7 @@ const lookUpAddress = latlng => {
 const OrderForm = () => {
 	/* State */
 	const [page, setPage] = useState(0);
+	const [loading, setLoading] = useState("");
 	const [error, setError] = useState("");
 
 	const [name, setName] = useState("asd");
@@ -80,8 +82,12 @@ const OrderForm = () => {
 
 	const submitOrder = () => {
 		if (validateDetails()) {
-			axios.post('/order', { name, tel, time, location, locationAddress, destination, destinationAddress });
-			console.log(`Name: ${name}, Tel: ${tel}, Time: ${time}, Location: ${location}, Destination: ${destination}.`);
+			if (!loading) {
+				axios.post('/order', { name, tel, time, location, locationAddress, destination, destinationAddress });
+				console.log(`Name: ${name}, Tel: ${tel}, Time: ${time}, Location: ${location}, Destination: ${destination}.`);
+				setLoading(true);
+				setPage(5);
+			}
 		}
 	};
 
@@ -90,6 +96,8 @@ const OrderForm = () => {
 	
 	/* Render */
 	const renderBody = () => {
+		if (loading) return <Loading />
+
 		switch (page) {
 			case 0: return <AccountDetails name={name} setName={setName} tel={tel} setTel={setTel} />
 			case 1: return <Location location={location} setLocation={updateLocation} />
@@ -107,7 +115,7 @@ const OrderForm = () => {
 			<OrderHeader page={page} />
 			{renderBody()}
 			{error && <Error error={error} />}
-			<OrderNav page={page} back={backPage} next={nextPage} submit={submitOrder} validateDetails={validateDetails} />
+			{!loading && <OrderNav page={page} back={backPage} next={nextPage} submit={submitOrder} validateDetails={validateDetails} />}
 		</form>
 	);
 };

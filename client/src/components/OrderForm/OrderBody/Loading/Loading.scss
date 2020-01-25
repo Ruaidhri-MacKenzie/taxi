@@ -1,0 +1,30 @@
+@import '../OrderForm.scss';
+
+.loading {
+	@include order-body;
+	justify-content: space-evenly;
+
+	&__title {
+		color: var(--colour1);
+		font-size: 2rem;
+	}
+
+	&__clock {
+		width: 160px;
+		height: 160px;
+		border-radius: 50%;
+		background-color: var(--colour1);
+		color: var(--light);
+		font-size: 80px;
+		animation: spin 1125ms infinite;
+	}
+
+	&__text {
+		color: var(--colour1);
+	}
+}
+
+@keyframes spin {
+	0% {transform: rotate(0deg)};
+	100% {transform: rotate(360deg)};
+}
