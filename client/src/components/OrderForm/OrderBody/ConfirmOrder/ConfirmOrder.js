@@ -1,7 +1,7 @@
 import React from 'react';
 import './ConfirmOrder.scss';
 
-import Address from '../../Address/Address';
+import Address from '../../../Address/Address';
 
 const ConfirmOrder = ({ name, tel, time, locationAddress, destinationAddress }) => {
 	return (

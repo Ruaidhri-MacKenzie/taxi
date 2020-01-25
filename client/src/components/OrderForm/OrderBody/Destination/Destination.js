@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Destination.scss';
 
-import StreetMap from '../../StreetMap/StreetMap';
-import AddressForm from '../AddressForm/AddressForm';
+import StreetMap from '../../../StreetMap/StreetMap';
+import AddressForm from '../../AddressForm/AddressForm';
 
 const Destination = ({ destination, setDestination }) => {
 	const [viewMap, setViewMap] = useState(true);
