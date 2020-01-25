@@ -8,6 +8,8 @@ const OrderHeader = ({ page }) => {
 		else if (page === 2) return "Select Destination";
 		else if (page === 3) return "Select Pick-Up Time";
 		else if (page === 4) return "Confirm Details";
+		else if (page === 5) return "Please Wait";
+		else return "";
 	};
 
 	return (
