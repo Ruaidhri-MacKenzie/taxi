@@ -1,8 +1,11 @@
 .order-header {
 	grid-area: header;
-	padding: 2em 1em;
+	padding: 1.5em 1em;
 	cursor: default;
 	user-select: none;
+	border-top: 1px solid var(--colour2);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 	background-color: var(--colour1);
 	color: var(--light);
 	text-align: center;
